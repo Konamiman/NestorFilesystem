@@ -32,7 +32,7 @@ Open [NFS.ASM](MSX/NFS.ASM), search for `TODO` comments, and do whatever you are
 
 The source is intended for the Compass MSX assembler, you can assemble it from a PC by using [Sjasm 0.39h](https://github.com/Konamiman/Sjasm/releases/tag/v0.39h): `sjasm -c NFS.asm NFS.COM` (the [`compile.bat`](MSX/compile.bat) script does exactly that).
 
-To install it just run `NFS.COM` without paramaters from within MSX-DOS 2 or Nextor (you need one free RAM segment in the primary mapper). The driver will be attached to drive G: (future versions will allow you to choose the drive letter). Uninstall with `NFS U`.
+To install it just run `NFS.COM` without parameters from within MSX-DOS 2 or Nextor (you need one free RAM segment in the primary mapper). The driver will be attached to drive G: (future versions will allow you to choose the drive letter). Uninstall with `NFS U`.
 
 You can check whether the driver is installed (and where) by calling extended BIOS (`0FFCAh`) with `DE=2204h`. If it is installed, you will get 22h in A, the slot number in B and the segment number in C. You can use this if you need to configure the driver with a custom tool (just switch the segment to any page and change whatever you need on it). Note that it is not possible to install more than one driver at the same time.
 
@@ -53,7 +53,9 @@ To ease testing the driver scaffolding code I have developed a plugin for [Nesto
     
 3. Build `NFS.COM` and copy it to a disk image file that you will mount in the emulator by using the MSX-DOS plugin. The [`build.bat`](MSX/build.bat) script does exactly that by using [ImDisk](http://www.ltr-data.se/opencode.html/#ImDisk) to mount the disk image file in the host machine, but you can use any other similar tool. You may need to tweak the [`mount.bat`](MSX/mount.bat) script as it contains the location of the image file in your machine - the default `NextorAndMsxDos.dsk` file is supplied with NestorMSX.
 
-4. Boot NestorMSX, and in the MSX-DOS 2 prompt run `NFS`. Then do `DIR G:` and... magic!
+4. Copy some files (and directories!) to the integrated directory in the host machine. Note that these must have 8.3, ASCII-only names; otherwise the plugin will not find them.
+
+5. Boot NestorMSX, and in the MSX-DOS 2 prompt run `NFS`. Then do `DIR G:` and... magic!
 
 ### Oh, and one more thing...
 
