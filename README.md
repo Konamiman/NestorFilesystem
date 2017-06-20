@@ -1,8 +1,8 @@
-##Filesystem Driver Infrastructure for MSX-DOS 2
+## Filesystem Driver Infrastructure for MSX-DOS 2
 
 aka
 
-#NestorFilesystem
+# NestorFilesystem
 
 ### Motivation
 
