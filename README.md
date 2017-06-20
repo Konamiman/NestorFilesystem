@@ -1,5 +1,7 @@
 ##Filesystem Driver Infrastructure for MSX-DOS 2
+
 aka
+
 #NestorFilesystem
 
 ### Motivation
@@ -38,14 +40,16 @@ You can check whether the driver is installed (and where) by calling extended BI
 
 To ease testing the driver scaffolding code I have developed a plugin for [NestorMSX](https://github.com/Konamiman/NestorMSX) that provides integration with the host filesystem - that is, it allows you to access the filesystem of the machine running the emulator directly from the emulated MSX. If you want to give it a try:
 
-1. Build [the plugin](NestorMSX) with Visual Studio and copy it to the `plugins` directory of your NestorMSX install.
+1. Build [the plugin](NestorMSX) with Visual Studio and copy it to the `plugins` directory of your NestorMSX install. Or alternatively, use the [already compiled version from the Releases version](releases/tag/v0.1).
 
 2. Modify the `machine.config` file of the machine configuration you will use (a good one would be _MSX2 with Nextor_) and add the following to the plugins section, modifying the values appropriately:
 
+```
     "Filesystem integration": { 
         "integratedDirectory": "$MyDocuments$/NestorMSX/FileSystem",
         "volumeLabel": "NestorMSX"
     }
+```
     
 3. Build `NFS.COM` and copy it to a disk image file that you will mount in the emulator by using the MSX-DOS plugin. The [`build.bat`](MSX/build.bat) script does exactly that by using [ImDisk](http://www.ltr-data.se/opencode.html/#ImDisk) to mount the disk image file in the host machine, but you can use any other similar tool. You may need to tweak the [`mount.bat`](MSX/mount.bat) script as it contains the location of the image file in your machine - the default `NextorAndMsxDos.dsk` file is supplied with NestorMSX.
 
