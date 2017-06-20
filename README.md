@@ -40,7 +40,7 @@ You can check whether the driver is installed (and where) by calling extended BI
 
 To ease testing the driver scaffolding code I have developed a plugin for [NestorMSX](https://github.com/Konamiman/NestorMSX) that provides integration with the host filesystem - that is, it allows you to access the filesystem of the machine running the emulator directly from the emulated MSX. If you want to give it a try:
 
-1. Build [the plugin](NestorMSX) with Visual Studio and copy it to the `plugins` directory of your NestorMSX install. Or alternatively, use the [already compiled version from the Releases version](releases/tag/v0.1).
+1. Build [the plugin](NestorMSX) with Visual Studio and copy it to the `plugins` directory of your NestorMSX install. Or alternatively, use the [already compiled version from the Releases version](../../releases/tag/v0.1).
 
 2. Modify the `machine.config` file of the machine configuration you will use (a good one would be _MSX2 with Nextor_) and add the following to the plugins section, modifying the values appropriately:
 
