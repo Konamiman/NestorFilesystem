@@ -1,5 +1,7 @@
 syntax: glob
 
+.vs/
+
 *.sym
 *.SYM
 *.lst
